@@ -11,10 +11,10 @@
 React
 
 ## Languages
-JavaScript 
-HTML 5
-CSS 3
-JSX
+* JavaScript 
+* HTML 5
+* CSS 3
+* JSX
 
 
 ## TL;DR
@@ -73,7 +73,7 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Contributing
 
-Developer-> Mohamed hadhoud
-Version 1.0
+* Developer-> Mohamed hadhoud
+* Version 1.0
 
 
