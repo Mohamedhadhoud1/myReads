@@ -1,7 +1,7 @@
  import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import {Link, Route } from 'react-router-dom'
+import {Route } from 'react-router-dom'
 import { Search } from './search'
 import { BookShelves } from './bookShelves'
 
@@ -33,7 +33,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
        
-     {console.log(this.state.books)}
+     
      <Route exact path='/search' render={()=>(
         <Search books={this.state.books} handleUpdate={this.updateBooks}/>
       )

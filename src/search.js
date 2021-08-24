@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import im from './im.jpg'
 
 export class Search extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
     state={
         query:'',
         searchBooks:[],
@@ -17,8 +13,8 @@ export class Search extends Component {
     
     updateQuery = (query) => {
         this.setState(() => ({
-          query: query.trim(),
-         // searchBooks: BooksAPI.search(this.state.query)
+          query: query
+        
         }))
 
 
@@ -42,7 +38,7 @@ export class Search extends Component {
 
         const Value = e.target.value;
         
-        //this.setState(()=>({value: Value}))
+      
         
         
         BooksAPI.update(book,Value)
@@ -51,7 +47,7 @@ export class Search extends Component {
             })
             }  
  defaultBook = (books,searchBook)=>{
-let isFound= books.find((book=>book.id==searchBook.id))
+let isFound= books.find((book=>book.id===searchBook.id))
 if(isFound){
   return isFound.shelf
 }

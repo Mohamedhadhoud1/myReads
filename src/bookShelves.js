@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Link  } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 
@@ -7,31 +6,20 @@ import * as BooksAPI from './BooksAPI'
 export class BookShelves extends Component {
   
   state = {
-        value:'kkkk',
+        value:'',
         
     }
     
-    //this.changeShelf=this.changeShelf.bind(this);
     
 changeShelf=(e,book)=>{
 const Value = e.target.value;
-//console.log(Value)
-//this.setState(()=>({value: Value}))
+
 
 
     BooksAPI.update(book,Value)
     .then(() => {
      this.props.handleUpdate()
         })
-      /*  console.log(this.state.value)
-        this.setState(() => ({
-          book.shelf:Value
-          
-      }))
-      console.log(this.state.value)
-      })*/
-   // console.log(this.state.value)
-   // const forceUpdate= () => void = React.useState()[1].bind(null, {})
     
   } 
  
@@ -69,7 +57,7 @@ const Value = e.target.value;
                                  </div>
                                </div>                               
                                <div className="book-title">{book.title}</div>
-                               <div className="book-authors">{book.authors}</div>
+                               <div className="book-authors">{book.authors.join(', ')}</div>
                              </div>
                            </li>
                             ))) }
@@ -103,7 +91,7 @@ const Value = e.target.value;
                             </div>
                           </div>
                           <div className="book-title">{book.title}</div>
-                          <div className="book-authors">{book.authors}</div>
+                          <div className="book-authors">{book.authors.join(', ')}</div>
                         </div>
                       </li>
                       
@@ -140,7 +128,7 @@ const Value = e.target.value;
                             </div>
                           </div>
                           <div className="book-title">{book.title}</div>
-                          <div className="book-authors">J{book.title}</div>
+                          <div className="book-authors">J{book.authors.join(', ')}</div>
                         </div>
                       </li>
 
